@@ -1,4 +1,4 @@
-# 
+# Shopping cart
 
 articles = ["🧸", "💿", "📷", "💽", "📃", "📓"]
 
@@ -30,7 +30,10 @@ while True:
     if choice == "1":
         print(articles)
         to_add = input("Enter an article to add: ")
-        add_to_cart(to_add)
+        if to_add not in articles:
+            print(f"{to_add} is not available.")
+        else:
+            add_to_cart(to_add)
     
     elif choice == "2":
         if not cart:
